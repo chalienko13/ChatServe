@@ -9,10 +9,13 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @EnableEurekaServer
 @EnableZuulProxy
 public class ServiceRegistrationServer {
+    public ServiceRegistrationServer() {
+    }
 
     public static void main(String[] args) {
-        // Tell Boot to look for registration-server.yml
         System.setProperty("spring.config.name", "application");
         SpringApplication.run(ServiceRegistrationServer.class, args);
+
+
     }
 }

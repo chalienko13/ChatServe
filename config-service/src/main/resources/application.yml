@@ -15,9 +15,9 @@ zuul:
     auth:
       path: /auth/**
       url: http://localhost:8082/auth
-    auth:
+    notification:
       path: /notification/**
       url: http://localhost:8083/notification
-    auth:
+    registration:
       path: /registration/**
       url: http://localhost:8084/registration
