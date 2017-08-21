@@ -4,10 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
 @EnableEurekaServer
-@EnableZuulProxy
+@EnableMongoRepositories(basePackages = "com.superteam.dao")
 public class ServiceRegistrationServer {
     public ServiceRegistrationServer() {
     }

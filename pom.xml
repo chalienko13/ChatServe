@@ -14,6 +14,7 @@
         <module>notification-service</module>
         <module>registration-service</module>
         <module>config-service</module>
+        <module>zuul-geteway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -57,13 +58,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
-
-        <!-- Security -->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-security</artifactId>-->
-        <!--</dependency>-->
-
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>

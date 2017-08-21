@@ -1,0 +1,6 @@
+development:
+  sessions:
+    default:
+      database: chatServ
+      hosts:
+        - localhost:27017

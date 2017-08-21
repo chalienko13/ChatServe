@@ -2,7 +2,9 @@ package com.superteam.registration.model.real;
 
 import com.superteam.registration.model.User;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "users")
 public class UserReal implements User {
 
 

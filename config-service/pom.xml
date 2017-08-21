@@ -13,12 +13,6 @@
 
 
     <dependencies>
-        <!-- Spring ZUUL -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zuul</artifactId>
-        </dependency>
-
         <dependency>
             <!-- Eureka for service registration -->
             <groupId>org.springframework.cloud</groupId>
