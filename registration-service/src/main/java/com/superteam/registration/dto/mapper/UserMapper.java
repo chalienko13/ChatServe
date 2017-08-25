@@ -1,4 +1,4 @@
-package com.superteam.registration.mapper;
+package com.superteam.registration.dto.mapper;
 
 import com.superteam.registration.dto.UserRegisterDto;
 import com.superteam.registration.model.User;

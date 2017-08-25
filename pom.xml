@@ -12,14 +12,20 @@
         <module>account-service</module>
         <module>auth-service</module>
         <module>notification-service</module>
-        <module>registration-service</module>
         <module>config-service</module>
         <module>zuul-geteway</module>
+        <module>registration-service</module>
     </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.3.3.Release</version>
+        <version>1.5.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <dependencies>
@@ -27,36 +33,29 @@
             <!-- Setup Spring Boot -->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-logging</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
-        <!-- Spring Log4j2 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j2</artifactId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
+        <!-- Stup Spring MVC & REST, use Embedded Tomcat -->
         <dependency>
-            <!-- Setup Spring MVC & REST, use Embedded Tomcat -->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <!-- Spring Cloud starter -->
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter</artifactId>
         </dependency>
 
         <!-- MongoDB -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
+        <dependency>
+            <!-- Spring Cloud starter -->
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
         </dependency>
 
         <dependency>

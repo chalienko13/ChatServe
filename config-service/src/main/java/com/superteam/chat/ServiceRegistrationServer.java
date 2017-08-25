@@ -8,7 +8,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @SpringBootApplication
 @EnableEurekaServer
-@EnableMongoRepositories(basePackages = "com.superteam.dao")
 public class ServiceRegistrationServer {
     public ServiceRegistrationServer() {
     }
