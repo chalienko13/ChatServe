@@ -1,7 +1,6 @@
 package com.superteam.registration.service.impl;
 
 import com.google.gson.GsonBuilder;
-import com.rabbitmq.tools.json.JSONWriter;
 import com.superteam.registration.dto.UserRegisterDto;
 import com.superteam.registration.dto.mapper.UserMapper;
 import com.superteam.registration.model.User;
