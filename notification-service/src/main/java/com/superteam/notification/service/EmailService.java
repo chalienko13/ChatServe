@@ -3,5 +3,5 @@ package com.superteam.notification.service;
 
 public interface EmailService {
 
-    public void sendConfirmRegistration();
+    public void sendEmail(String to, String subject, String body);
 }

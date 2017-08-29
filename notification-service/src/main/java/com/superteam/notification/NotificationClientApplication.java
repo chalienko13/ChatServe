@@ -10,6 +10,11 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 public class NotificationClientApplication {
 
     public static void main(String[] args) {
+        System.setProperty("java.net.preferIPv4Stack", "true");
         SpringApplication.run(NotificationClientApplication.class, args);
     }
+
+
+
+
 }

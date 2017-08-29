@@ -1,6 +1,7 @@
 package com.superteam.registration.controller;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.superteam.registration.dto.UserRegisterDto;
 import com.superteam.registration.model.User;
 import com.superteam.registration.service.UserService;
@@ -24,10 +25,15 @@ public class RegisterController {
         this.userService = userService;
     }
 
-//    http://localhost:8085/registration/user?firstName=doe&lastName=json&email=admin@gmail.com&phoneNumber=1234566789&password=123123  test line
+//    http://localhost:8085/registration/user?firstName=doe&lastName=json&email=oxeygenoxeygen@gmail.com&phoneNumber=1234566789&password=123123  test line
 
     @RequestMapping(value = "/user", method = RequestMethod.GET) // todo change from RequestMethod.GET to RequestMethod.POST
-    public ResponseEntity<String> registerUser(UserRegisterDto userRegisterDto){
+    public ResponseEntity<String> registerUser(UserRegisterDto userRegisterDto) throws JsonProcessingException {
         return userService.persist(userRegisterDto);
+    }
+
+    @RequestMapping(value = "/confirm", method = RequestMethod.GET)
+    public ResponseEntity<String> confirmRegister(String id, String token){
+        return userService.checkConfirmationToken(id, token);
     }
 }

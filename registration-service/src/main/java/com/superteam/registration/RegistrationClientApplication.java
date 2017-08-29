@@ -14,7 +14,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 //@EnableGlobalMethodSecurity
 @SpringBootApplication
 public class RegistrationClientApplication {
-    @Value("${myqueue}")
+
+    @Value("${register}")
     private String queueName;
 
     public static void main(String[] args) {
