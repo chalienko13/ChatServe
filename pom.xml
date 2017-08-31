@@ -13,7 +13,7 @@
         <module>auth-service</module>
         <module>notification-service</module>
         <module>config-service</module>
-        <module>zuul-geteway</module>
+        <module>zuul-gateway</module>
         <module>registration-service</module>
     </modules>
 

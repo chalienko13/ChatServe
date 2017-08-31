@@ -3,14 +3,14 @@ package com.superteam.registration.dto.mapper;
 import com.superteam.registration.dto.UserRegConfirmDto;
 import com.superteam.registration.dto.UserRegisterDto;
 import com.superteam.registration.model.User;
-import com.superteam.registration.model.real.UserReal;
+import com.superteam.registration.model.real.UserMongo;
 import org.springframework.stereotype.Component;
 
 @Component
 public class UserMapper {
 
     public User mapRegisterUser(UserRegisterDto registerDto){
-        UserReal user =  new UserReal();
+        UserMongo user =  new UserMongo();
         user.setFirstName(registerDto.getFirstName());
         user.setLastName(registerDto.getLastName());
         user.setPhoneNumber(registerDto.getPhoneNumber());

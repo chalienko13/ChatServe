@@ -28,18 +28,18 @@ public class EmailConsumer {
 
     @RabbitListener(queues="${register}")
     public void handler(String message){
-        UserRegConfirmDto userConfirm = null;
+        log.info("EmailConsumer > {}", message);
+        UserRegConfirmDto userConfirm;
         try {
             userConfirm = mapper.readValue(message, UserRegConfirmDto.class);
+            emailService.sendEmail(
+                    userConfirm.getEmail(),
+                    emailHelper.getRegConfirmSubj(),
+                    emailHelper.getRegConfirmBody(userConfirm.getUsername(), userConfirm.getActivationLink())
+            );
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        emailService.sendEmail(
-                userConfirm.getEmail(),
-                emailHelper.getRegConfirmSubj(),
-                emailHelper.getRegConfirmBody(userConfirm.getUsername(), userConfirm.getActivationLink())
-        );
-        log.info("EmailConsumer > " + message);
     }
 }

@@ -97,17 +97,17 @@ public class UserServiceImpl implements UserService {
             UserToken userToken = userTokenRepository.findByEmail(user.getEmail());
             if (userToken != null){
                 if (userToken.getActivated()){
-                    return new ResponseEntity<>(String.format("User with email {} already activated", userToken.getEmail()), HttpStatus.OK);
+                    return new ResponseEntity<>(String.format("User with email %s already activated", userToken.getEmail()), HttpStatus.OK);
                 }else {
                     if (token.equals(userToken.getToken())) {
                         userToken.setActivated(true);
                         userTokenRepository.save(userToken);
-                        return new ResponseEntity<>(String.format("User with email {} successful activated", user.getEmail()), HttpStatus.OK);
+                        return new ResponseEntity<>(String.format("User with email %s successful activated", user.getEmail()), HttpStatus.OK);
                     }
                 }
             }
         }
-        return new ResponseEntity<>(String.format("User with this credentials is not found"), HttpStatus.OK);
+        return new ResponseEntity<>("User with this credentials is not found", HttpStatus.BAD_REQUEST);
     }
 
 

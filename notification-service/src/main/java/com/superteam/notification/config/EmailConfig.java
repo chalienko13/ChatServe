@@ -28,25 +28,22 @@ public class EmailConfig {
     @Resource
     private Environment env;
 
+
     @Bean
-    public JavaMailSenderImpl getJavaMailSender() {
-        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        mailSender.setHost(env.getProperty(PROP_EMAIL_HOST));
-        mailSender.setPort(Integer.valueOf(env.getProperty(PROP_EMAIL_PORT)));
-        mailSender.setUsername(env.getProperty(PROP_EMAIL_USERNAME));
-        mailSender.setPassword(env.getProperty(PROP_EMAIL_PASSWORD));
-        mailSender.setJavaMailProperties(getProperties());
+    public JavaMailSenderImpl mailSender(){
+        JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
+        javaMailSender.setHost(env.getRequiredProperty(PROP_EMAIL_HOST));
 
-        LOGGER.debug("Email sender is successful prepared");
+        javaMailSender.setUsername(env.getRequiredProperty(PROP_EMAIL_USERNAME));
+        javaMailSender.setPassword(env.getRequiredProperty(PROP_EMAIL_PASSWORD));
 
-        return mailSender;
-    }
-
-
-    public Properties getProperties(){
         Properties props = new Properties();
-        props.put(PROP_EMAIL_AUTH, env.getProperty(PROP_EMAIL_AUTH));
-        props.put(PROP_EMAIL_STARTTLS, env.getProperty(PROP_EMAIL_STARTTLS));
-        return props;
+        props.put(PROP_EMAIL_AUTH, env.getRequiredProperty(PROP_EMAIL_AUTH));
+        props.put(PROP_EMAIL_STARTTLS, env.getRequiredProperty(PROP_EMAIL_STARTTLS));
+        props.put(PROP_EMAIL_HOST, env.getRequiredProperty(PROP_EMAIL_HOST));
+        props.put(PROP_EMAIL_PORT, env.getRequiredProperty(PROP_EMAIL_PORT));
+        javaMailSender.setJavaMailProperties(props);
+
+        return javaMailSender;
     }
 }

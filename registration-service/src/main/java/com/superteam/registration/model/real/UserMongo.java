@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "users")
-public class UserReal implements User {
+public class UserMongo implements User {
 
 
     @Id
@@ -16,10 +16,10 @@ public class UserReal implements User {
     private String phoneNumber;
     private String password;
 
-    public UserReal() {
+    public UserMongo() {
     }
 
-    public UserReal(String firstName, String lastName, String email, String phoneNumber, String password) {
+    public UserMongo(String firstName, String lastName, String email, String phoneNumber, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
